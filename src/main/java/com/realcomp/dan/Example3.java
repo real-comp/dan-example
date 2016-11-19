@@ -52,26 +52,27 @@ public class Example3{
 
         try{
 
-            //There is a RecordReaderFactory in prime that can use a Schema to create an approprate reader of
-            //Records from an input source.  I know the input is JSON, and the "schema" for this type of object
-            // is stored in the JSON and does not need to be re-defined.
+            //There is a RecordReaderFactory in Prime that can inspect a Schema to create an approprate reader of
+            //Records from an input source.  I know here that the input is JSON, and a schema is not needed.  The JSON 
+            //describes the field names, types, and values without the need for an external schema.
             reader = new JsonReader();
 
-            //Use the Prime SchemaFactory to read the 'example3.schema' file on the classpath and baked into this jar file.
+            //Use the Prime SchemaFactory to read the 'example3.schema' file that on the classpath. 
+            //see /src/main/resources/...
             Schema schema = SchemaFactory.buildSchema(Example3.class.getResourceAsStream("example3.schema"));
 
             //create an appropriate RecordWriter
             writer = RecordWriterFactory.build(schema);
 
-            //create the input and output IOContext to STDIN/STDOUT
+            //create the input and output IOContext for STDIN/STDOUT
             inputContext = new IOContextBuilder().in(System.in).build();
             outputContext = new IOContextBuilder().schema(schema).out(System.out).build();
 
             reader.open(inputContext);
             writer.open(outputContext);
 
-            //read all the Records and pass them to the writer.  The magic is in the Schema that
-            //was created with knowledge of the json format.
+            //read all the Records and pass them to the writer.  The JSON is parsed to a Prime Record.
+            //This Record is then transformed and written with information in the output Schema (example3.schema).
             Record record = reader.read();
             while (record != null){
                 writer.write(record);
