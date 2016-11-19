@@ -10,7 +10,7 @@ import com.realcomp.prime.schema.Schema;
 import com.realcomp.prime.schema.SchemaFactory;
 
 /**
- * Uses Prime to emit some information on every Vehicle Owner.
+ * Uses Prime to emit some information on the first Vehicle Owner.
  *
  * Note that the MvrTransaction object is NOT used in this example.  This is JSON to CSV using Prime.
  *
