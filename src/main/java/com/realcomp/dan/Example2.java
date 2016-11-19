@@ -97,6 +97,7 @@ public class Example2{
         ObjectReader reader = jackson.readerFor(MVRTransaction.class);
 
         //Use the Prime SchemaFactory to read the 'example2.schema' file on the classpath and baked into this jar file.
+        // @see src/main/resources/
         Schema schema = SchemaFactory.buildSchema(Example2.class.getResourceAsStream("example2.schema"));
 
         //this try-with-resources block creates 2 Objects:
