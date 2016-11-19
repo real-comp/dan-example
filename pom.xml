@@ -70,9 +70,24 @@
             <type>jar</type>
         </dependency>
         <dependency>
+            <!-- I'm needed for example 1 -->
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.7.6</version>
+        </dependency>
+        <dependency>
+            <!-- I'm needed for example 2 and 3 -->
+            <groupId>com.real-comp</groupId>
+            <artifactId>prime</artifactId>
+            <version>0.5.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <!-- I'm needed for example 3 -->
+            <groupId>com.real-comp</groupId>
+            <artifactId>prime-json</artifactId>
+            <version>0.5.0</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

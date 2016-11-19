@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rc:schema
+    xmlns:rc="http://www.real-comp.com/realcomp-data/schema/file-schema/1.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.real-comp.com/realcomp-data/schema/file-schema/1.2 http://www.real-comp.com/realcomp-data/schema/file-schema/1.2/file-schema.xsd"
+    name="example2">
+
+    <format type="CSV" header="true"/>
+
+    <fields>
+        <field name="VIN"/>
+        <field name="plate"/>
+        <field name="name"/>
+        <field name="prefix"/>
+        <field name="first"/>
+        <field name="middle"/>
+        <field name="last"/>
+        <field name="suffix"/>
+        <field name="address"/>
+        <field name="city"/>
+        <field name="state"/>
+        <field name="zip"/>
+    </fields>
+</rc:schema>

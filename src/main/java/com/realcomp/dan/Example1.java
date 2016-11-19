@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.Iterator;
 
 /**
- *
+ * Emits the VIN for every Vehicle that has one.
  */
 public class Example1{
 
@@ -26,11 +26,12 @@ public class Example1{
             //use our Jackson ObjectReader to create a Java Iterator over all the MVRTransactions read from STDIN.
             Iterator<MVRTransaction> itr = reader.readValues(System.in);
 
-            //for every transaction with a vehicle, emit the VIN.
+            //for every MVRTransaction with a vehicle, emit the VIN. One per line.
             while (itr.hasNext()){
                 MVRTransaction tx = itr.next();
-                if (tx.getVehicle() != null){
+                if (tx.getVehicle() != null && tx.getVehicle().getVin() != null){
                     writer.write(tx.getVehicle().getVin());
+                    writer.newLine();
                 }
             }
         }
