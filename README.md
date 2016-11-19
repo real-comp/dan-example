@@ -31,6 +31,9 @@ If successful, the /target sub-directory will contain the ".jar" file for this p
 
 The example code is documented heavily.  
 
+The 3 examples provided are not "working up" to the best solution. 
+They are only meant to highlight _some_ of the possiblities on how to deal with the data in Java.
+
 ## Acquire sample data
 The data used in this project is _not_ included with this project.  You will need to use some pre-built mvr-common
 JSON data.
